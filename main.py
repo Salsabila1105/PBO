@@ -16,9 +16,11 @@ class Ricecooker:
 
   def turnoffRicecooker(self):
     print('Ricecooker off ',self.nama_merk)
-    
-  def pressTuas(self):
-    print('Tuas Ricecooker On ',self.nama_merk)
+  
+  def pressTuas(self,mode):
+    self.mode=mode
+    print('Ricecooker Cook Mode',self.nama_merk, ' Mode ', self.mode)
+
 
 #atribut ke objek
 Ricecooker_kamar_kost = Ricecooker('cosmos','memasak','terisi')
@@ -26,11 +28,12 @@ Ricecooker_dapur = Ricecooker('yong ma','menghangatkan','terisi')
 
 #memanggil fungsi dari objek
 Ricecooker_dapur.turnonRicecooker()
-Ricecooker_dapur.pressTuas()
+Ricecooker_kamar_kost.turnonRicecooker()
+Ricecooker_dapur.pressTuas('memasak')
 
-print(Ricecooker_dapur.nama_merk)
-print(Ricecooker_dapur.Tuas)
-print(Ricecooker_dapur.panci)
-print(Ricecooker_kamar_kost.nama_merk)
-print(Ricecooker_kamar_kost.Tuas)
-print(Ricecooker_kamar_kost.panci)
+#print(Ricecooker_dapur.nama_merk)
+#print(Ricecooker_dapur.Tuas)
+#print(Ricecooker_dapur.panci)
+#print(Ricecooker_kamar_kost.nama_merk)
+#print(Ricecooker_kamar_kost.Tuas)
+#print(Ricecooker_kamar_kost.panci)
