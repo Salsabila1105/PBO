@@ -1,10 +1,11 @@
 #membuat class
 class Ricecooker:
   #fungsi construktor
-  def __init__(self,nama_merk,Tuas,panci):
+  def __init__(self,nama_merk,Tuas,panci,Mode):
     self.nama_merk = nama_merk
     self.Tuas = Tuas
     self.panci = panci
+    self.Mode = Mode
 
 #objek
 # Ricecooker_kamar_kost = Ricecooker()
@@ -17,23 +18,30 @@ class Ricecooker:
   def turnoffRicecooker(self):
     print('Ricecooker off ',self.nama_merk)
   
-  def pressTuas(self,mode):
-    self.mode=mode
-    print('Ricecooker Cook Mode',self.nama_merk, ' Mode ', self.mode)
+  def pressTuas(self,version):
+    self.version=version
+    print('Ricecooker Cook version',self.nama_merk, ' version ', self.version)
+
+
+#overriding phyton
+class KosCooker(Ricecooker):
+ def __init__(self,nama_merk,Tuas,panci,Mode):
+    super(KosCooker, self).__init__(nama_merk,Tuas,panci,Mode)
+ def pressTuas(self, version, step):
+     self.step = step
+     self.version = version
+     print('Ricecooker Cook version',self.nama_merk, ' version ', self.version, self.step)
+
+    
 
 
 #atribut ke objek
-Ricecooker_kamar_kost = Ricecooker('cosmos','memasak','terisi')
-Ricecooker_dapur = Ricecooker('yong ma','menghangatkan','terisi')
+Ricecooker_kamar_kost = Ricecooker('cosmos','memasak','terisi', 'mode bubur', )
+Ricecooker_dapur = KosCooker('yong ma','menghangatkan','terisi', 'Ikan')
 
 #memanggil fungsi dari objek
 Ricecooker_dapur.turnonRicecooker()
 Ricecooker_kamar_kost.turnonRicecooker()
-Ricecooker_dapur.pressTuas('memasak')
+Ricecooker_dapur.pressTuas('memasak', 2)
 
-#print(Ricecooker_dapur.nama_merk)
-#print(Ricecooker_dapur.Tuas)
-#print(Ricecooker_dapur.panci)
-#print(Ricecooker_kamar_kost.nama_merk)
-#print(Ricecooker_kamar_kost.Tuas)
-#print(Ricecooker_kamar_kost.panci)
+
