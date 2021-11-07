@@ -35,28 +35,37 @@ class Ricecooker:
     self._activatedtemperature = num
     print('Temperatur aktif', self.nama_merk,'Ricecooker',self._activatedtemperature)
     
+  def __add__(self, other) :
+   return self.Mode + other.Mode
 
+kost = Ricecooker('Young Ma', 'memasak', 'terisi', 5)
+dapur = Ricecooker('Cosmos', 'menghagatkan', 'terisi', 6)
+print(kost + dapur)
+print(kost)
+print(kost.__dict__)
 
 #overriding phyton
-class KosCooker(Ricecooker):
- def __init__(self,nama_merk,Tuas,panci,Mode):
-    super(KosCooker, self).__init__(nama_merk,Tuas,panci,Mode)
- def pressTuas(self, version, step):
-     self.step = step
-     self.version = version
-     print('Ricecooker Cook version',self.nama_merk, ' version ', self.version, self.step)
- def temperature(self):
-    return self._activatedtemperature
+#class KosCooker(Ricecooker):
+# def __init__(self,nama_merk,Tuas,panci,Mode):
+ #   super(KosCooker, self).__init__(nama_merk,Tuas,panci,Mode)
+# def pressTuas(self, version, step):
+   #  self.step = step
+    # self.version = version
+    # print('Ricecooker Cook version',self.nama_merk, ' version ', self.version, self.step)
+ #def temperature(self):
+    #return self._activatedtemperature
+
+
 
 #atribut ke objek
-Ricecooker_kamar_kost = Ricecooker('cosmos','memasak','terisi', 'mode bubur', )
-Ricecooker_dapur = KosCooker('yong ma','menghangatkan','terisi', 'roti')
-Ricecooker_dapur.activatedtemperature(200)
-print(Ricecooker_dapur.temperature())
+#Ricecooker_kamar_kost = Ricecooker('cosmos','memasak','terisi', 5 )
+#Ricecooker_dapur = KosCooker('yong ma','menghangatkan','terisi', 7)
+#Ricecooker_dapur.activatedtemperature(200)
+#print(Ricecooker_dapur.temperature())
 
 #memanggil fungsi dari objek
-Ricecooker_dapur.turnonRicecooker()
-Ricecooker_kamar_kost.turnonRicecooker()
-Ricecooker_dapur.pressTuas('memasak', 2)
-
+#Ricecooker_dapur.turnonRicecooker()
+#Ricecooker_kamar_kost.turnonRicecooker()
+#Ricecooker_dapur.pressTuas('memasak', 2)
+#print()
 
